@@ -1,0 +1,81 @@
+
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:padding="16dp">
+<TextView
+    android:id="@+id/textViewQ"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="QUANTITY"
+    android:paddingBottom="16sp"/>
+
+<LinearLayout
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/textViewQ"
+    >
+
+    <Button
+        android:id="@+id/plusButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/textViewQ"
+        android:backgroundTint="#BFBEBE"
+        android:text="-"
+        android:textColor="@color/black"
+        android:onClick="decrement"/>
+
+    <TextView
+        android:id="@+id/textView_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/plusButton"
+        android:textSize="16sp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/black"
+        android:text="0" />
+
+    <Button
+        android:id="@+id/minusButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/textView_quantity"
+        android:backgroundTint="#BFBEBE"
+        android:text="+"
+        android:textColor="@color/black"
+        android:onClick="increment"/>
+
+</LinearLayout>
+
+<TextView
+    android:id="@+id/textViewP"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/linearLayout"
+    android:text="PRICE"
+    android:paddingTop="16sp"/>
+
+<TextView
+    android:id="@+id/textView_price"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/textViewP"
+    android:textSize="16sp"
+    android:textColor="@color/black"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    android:text="$0" />
+<Button
+    android:id="@+id/button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/textView_price"
+    android:backgroundTint="#BFBEBE"
+    android:text="ORDER"
+    android:textColor="@color/black"
+    android:onClick="submitOrder"/>
+</RelativeLayout>
