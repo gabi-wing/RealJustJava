@@ -1,13 +1,49 @@
 
 <RelativeLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:padding="16dp">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+
+<EditText
+    android:id="@+id/nameInput"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Name"/>
+
+
 <TextView
+    android:id="@+id/textView_toppings"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="TOPPINGS"
+    android:layout_below="@id/nameInput"
+    android:padding="16sp"/>
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_toppings"
+        android:layout_marginTop="-15dp"
+        android:paddingHorizontal="24dp"
+        android:text="Whipped Cream" />
+
+    <CheckBox
+        android:id="@+id/checkbox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkbox"
+        android:layout_marginTop="-15dp"
+        android:paddingHorizontal="24dp"
+        android:text="Chocolate" />
+
+    <TextView
     android:id="@+id/textViewQ"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_below="@+id/checkbox2"
     android:text="QUANTITY"
     android:paddingBottom="16sp"/>
 
@@ -19,7 +55,7 @@ android:padding="16dp">
     >
 
     <Button
-        android:id="@+id/plusButton"
+        android:id="@+id/minusButton"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_below="@id/textViewQ"
@@ -40,7 +76,7 @@ android:padding="16dp">
         android:text="0" />
 
     <Button
-        android:id="@+id/minusButton"
+        android:id="@+id/plusButton"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_below="@id/textView_quantity"
@@ -56,7 +92,7 @@ android:padding="16dp">
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_below="@id/linearLayout"
-    android:text="PRICE"
+    android:text="ORDER SUMMARY"
     android:paddingTop="16sp"/>
 
 <TextView
@@ -78,4 +114,6 @@ android:padding="16dp">
     android:text="ORDER"
     android:textColor="@color/black"
     android:onClick="submitOrder"/>
+
+
 </RelativeLayout>
