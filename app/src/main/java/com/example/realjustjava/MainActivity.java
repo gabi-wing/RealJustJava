@@ -1,10 +1,13 @@
 package com.example.realjustjava;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -26,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the plus button is clicked.
      */
     public void increment(View view) {
-        quantity += 1;
+        if(quantity<100) {quantity += 1;}
         displayQuantity(quantity);
     }
 
@@ -34,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the minus button is clicked.
      */
     public void decrement(View view) {
-        quantity -= 1;
+        if(quantity>1){quantity -= 1;}
         displayQuantity(quantity);
     }
 
@@ -51,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         message+="\nTotal: $" + calculatePrice(quantity);
         message += "\nThank you!";
         displayMessage(message);
+        composeEmail();
     }
 
     public int calculatePrice(int quantity){
@@ -97,5 +101,14 @@ public class MainActivity extends AppCompatActivity {
         CheckBox chocolate = (CheckBox) findViewById(R.id.checkbox2);
         if(chocolate.isChecked()){hasChocolate=true;}
         return hasChocolate;
+    }
+
+    public void composeEmail(){
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("*/*");
+        intent.putExtra(Intent.EXTRA_SUBJECT, "order summary");
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
     }
 }
